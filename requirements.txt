@@ -1,3 +1,4 @@
--e git+https://github.com/ibm/ibm-cos-sdk-python-core.git@master#egg=ibm_cos_sdk_core
--e git+https://github.com/boto/jmespath.git@develop#egg=jmespath
--e git+https://github.com/ibm/ibm-cos-sdk-python-s3transfer.git@master#egg=ibm_cos_sdk_s3transfer
+ibm-cos-sdk-core @ git+https://github.com/ibm/ibm-cos-sdk-python-core.git@2.13.4
+ibm-cos-sdk-s3transfer @ git+https://github.com/ibm/ibm-cos-sdk-python-s3transfer.git@2.13.4
+jmespath @ git+https://github.com/boto/jmespath.git@1.0.1
+six==1.16.0

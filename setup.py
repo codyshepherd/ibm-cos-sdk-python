@@ -8,12 +8,10 @@ ROOT = os.path.dirname(__file__)
 VERSION_RE = re.compile(r'''__version__ = ['"]([a-z0-9.]+)['"]''')
 
 
-requires = [
-    'ibm-cos-sdk-core==2.13.4',
-    'ibm-cos-sdk-s3transfer==2.13.4',
-    'jmespath>=0.10.0,<=1.0.1',
-    'six==1.16.0',
-]
+reqs_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+
+with open(reqs_path, 'r') as req_file:
+    dependencies = req_file.readlines()
 
 
 def get_version():
@@ -33,7 +31,7 @@ setup(
     packages=find_packages(exclude=['tests*']),
     package_data={'ibm_boto3': ['data/aws/resources/*.json', 'examples/*.rst']},
     include_package_data=True,
-    install_requires=requires,
+    install_requires=dependencies,
     license="Apache License 2.0",
     python_requires=">= 3.6",
     classifiers=[
